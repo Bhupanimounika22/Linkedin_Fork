@@ -1,0 +1,577 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google Icons -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Final - LinkedIn UI Clone</title>
+  </head>
+  <body>
+    <!-- Header Starts -->
+    <div class="header">
+      <div class="header__left">
+        <img
+          src="data:image/png;base64,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"
+          alt=""
+        />
+        <div class="header__search">
+          <i class="material-icons"> search </i>
+          <input type="text" />
+        </div>
+      </div>
+
+      <div class="header__right">
+        <div class="headerOption">
+          <i class="material-icons headerOption__icon"> home </i>
+          <h3>Home</h3>
+        </div>
+        <div class="headerOption">
+          <i class="material-icons headerOption__icon"> supervisor_account </i>
+          <h3>My Network</h3>
+        </div>
+        <div class="headerOption">
+          <i class="material-icons headerOption__icon"> business_center </i>
+          <h3>Jobs</h3>
+        </div>
+        <div class="headerOption">
+          <i class="material-icons headerOption__icon"> chat </i>
+          <h3>Messaging</h3>
+        </div>
+        <div class="headerOption">
+          <i class="material-icons headerOption__icon"> notifications </i>
+          <h3>Notifications</h3>
+        </div>
+        <div class="headerOption">
+          <i class="material-icons headerOption__icon"> account_circle </i>
+          <h3>Me</h3>
+        </div>
+      </div>
+    </div>
+    <!-- Header Ends -->
+
+    <!-- Main Body Starts -->
+    <div class="body__main">
+      <!-- Sidebar Starts -->
+      <div class="sidebar">
+        <div class="sidebar__top">
+          <img
+            src="https://images.template.net/115207/free-plain-pastel-background-ydeis.jpg"
+          />
+          <i class="material-icons sidebar__topAvatar"> account_circle </i>
+          <h2>Bhupani Mounika</h2>
+          <h4>Student at VIT AP university</h4>
+          <hr />
+
+          <h5>connections</h5>
+          <p>connect with alumini</p>
+          <h3>4</h3>
+
+          <hr />
+          <pre>Acess exclusive tools & insight</pre>
+          <pre><a href="#">Try premium for free</a></pre>
+          <hr />
+          <img
+            class="imag"
+            src="https://t4.ftcdn.net/jpg/03/53/54/85/360_F_353548582_yfiFTJxWxXFBPM1iT9vzG3kJav0bfC5T.jpg"
+            alt=""
+          />
+
+          <pre class="items">My Items</pre>
+        </div>
+
+        <div class="sidebar__bottom">
+          <div class="sidebar__recentItem">
+            <span class="sidebar__hash">#</span>
+            <p>Groups</p>
+          </div>
+          <div class="sidebar__recentItem">
+            <span class="sidebar__hash">#</span>
+            <p>Events</p>
+          </div>
+          <div class="sidebar__recentItem">
+            <span class="sidebar__hash">#</span>
+            <p>Follow hashtags</p>
+          </div>
+          <hr />
+          <div class="sidebar__recentItem">
+            <pre>Discover More</pre>
+          </div>
+        </div>
+      </div>
+      <!-- Sidebar Ends -->
+
+      <!-- Feed Starts -->
+      <div class="feed">
+        <div class="feed__inputContainer">
+          <div class="feed__input">
+            <i class="material-icons"> create </i>
+            <form>
+              <input type="text" />
+              <button type="submit">Send</button>
+            </form>
+          </div>
+
+          <div class="feed__inputOptions">
+            <div class="inputOption">
+              <i style="color: #70b5f9;" class="material-icons">
+                insert_photo
+              </i>
+              <h4>Photo</h4>
+            </div>
+            <div class="inputOption">
+              <i style="color: #e7a33e;" class="material-icons">
+                subscriptions
+              </i>
+              <h4>Video</h4>
+            </div>
+            <div class="inputOption">
+              <i style="color: #c0cbcd;" class="material-icons"> event_note </i>
+              <h4>Event</h4>
+            </div>
+            <div class="inputOption">
+              <i style="color: #7fc15e;" class="material-icons">
+                calendar_view_day
+              </i>
+              <h4>Write Article</h4>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post Starts -->
+        <div class="post">
+          <div class="post__header">
+            <i class="material-icons sidebar__topAvatar"> account_circle </i>
+            <div class="post__info">
+              <h2>Bhaskar</h2>
+              <p>Job Description</p>
+            </div>
+          </div>
+
+          <div class="post__body">
+            <p>
+              Hello Connections, I always wanted to participate in national
+              hackathon and experience the work environment.
+              <img
+                class="image-1"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcFO0MvLXOs4ZCDV2bfVygl1F-2utQWRFhWw&usqp=CAU"
+                alt=""
+              />
+            </p>
+          </div>
+
+          <div class="feed__inputOptions">
+            <div class="inputOption">
+              <i style="color: gray;" class="material-icons"> thumb_up </i>
+              <h4>Like</h4>
+            </div>
+            <div class="inputOption">
+              <i style="color: gray;" class="material-icons"> comment </i>
+              <h4>Comment</h4>
+            </div>
+            <div class="inputOption">
+              <i style="color: gray;" class="material-icons"> share </i>
+              <h4>Share</h4>
+            </div>
+            <div class="inputOption">
+              <i style="color: gray;" class="material-icons"> send </i>
+              <h4>Send</h4>
+            </div>
+          </div>
+        </div>
+        <!-- Post Ends -->
+
+        <!-- Post Starts -->
+        <div class="post">
+          <div class="post__header">
+            <i class="material-icons sidebar__topAvatar"> account_circle </i>
+            <div class="post__info">
+              <h2>Gunda laxmisai</h2>
+              <p>Job Description</p>
+            </div>
+          </div>
+
+          <div class="post__body">
+            <p>Learn to make accessibility testing quick and hassle-free.</p>
+            <a
+              href="https://www.jotform.com/form-templates/simple-job-application-form"
+              target="_blank"
+            >
+              <img
+                class="image-1"
+                src="https://images.template.net/wp-content/uploads/2020/01/Job-Application-Template.jpg"
+                alt=""
+              />
+            </a>
+          </div>
+
+          <div class="feed__inputOptions">
+            <div class="inputOption">
+              <i style="color: gray;" class="material-icons"> thumb_up </i>
+              <h4>Like</h4>
+            </div>
+            <div class="inputOption">
+              <i style="color: gray;" class="material-icons"> comment </i>
+              <h4>Comment</h4>
+            </div>
+            <div class="inputOption">
+              <i style="color: gray;" class="material-icons"> share </i>
+              <h4>Share</h4>
+            </div>
+            <div class="inputOption">
+              <i style="color: gray;" class="material-icons"> send </i>
+              <h4>Send</h4>
+            </div>
+          </div>
+        </div>
+        <!-- Post Ends -->
+
+        <!-- Post Starts -->
+        <div class="post">
+          <div class="post__header">
+            <i class="material-icons sidebar__topAvatar"> account_circle </i>
+            <div class="post__info">
+              <h2>Likitha burra</h2>
+              <p>Job Description</p>
+            </div>
+          </div>
+
+          <div class="post__body">
+            <p>
+              Had some practice of JAVA Language on HackerRank and earned a
+              Silver Badge. The problems on the platform are very useful for
+              beginners.<a href="#">
+                #java #javaprogramming #hackerrank #programminglanguage</a
+              >
+            </p>
+            <a
+              href="https://www.hackerrank.com/rahul5524?badge=java&stars=3&level=2&hr_r=1&utm_campaign=social-buttons&utm_medium=linkedin&utm_source=badge_share&social=linkedin"
+              target="_blank"
+            >
+              <img
+                class="image-1"
+                src="https://media.licdn.com/dms/image/sync/D5627AQHxxDAbRhgdcw/articleshare-shrink_800/0/1685098362729?e=1685876400&v=beta&t=fHnxVOd70ree0FpHsbRJEmLhNp99LkTM4EErhSjuEdM"
+                alt=""
+              />
+            </a>
+          </div>
+
+          <div class="feed__inputOptions">
+            <div class="inputOption">
+              <i style="color: gray;" class="material-icons"> thumb_up </i>
+              <h4>Like</h4>
+            </div>
+            <div class="inputOption">
+              <i style="color: gray;" class="material-icons"> comment </i>
+              <h4>Comment</h4>
+            </div>
+            <div class="inputOption">
+              <i style="color: gray;" class="material-icons"> share </i>
+              <h4>Share</h4>
+            </div>
+            <div class="inputOption">
+              <i style="color: gray;" class="material-icons"> send </i>
+              <h4>Send</h4>
+            </div>
+          </div>
+        </div>
+        <!-- Post Ends -->
+
+        <!-- Post Starts -->
+        <div class="post">
+          <div class="post__header">
+            <i class="material-icons sidebar__topAvatar"> account_circle </i>
+            <div class="post__info">
+              <h2>Bhupani Mounika</h2>
+              <p>Job Description</p>
+            </div>
+          </div>
+
+          <div class="post__body">
+            <p>
+              Hello connections, I am very happy to share with you that i have
+              selected for oasis infobyte internship.
+            </p>
+            <img
+              class="image-1"
+              src="https://img.freepik.com/free-vector/elegant-blue-gold-diploma-certificate-template_1017-17257.jpg"
+              alt=""
+            />
+          </div>
+
+          <div class="feed__inputOptions">
+            <div class="inputOption">
+              <i style="color: gray;" class="material-icons"> thumb_up </i>
+              <h4>Like</h4>
+            </div>
+            <div class="inputOption">
+              <i style="color: gray;" class="material-icons"> comment </i>
+              <h4>Comment</h4>
+            </div>
+            <div class="inputOption">
+              <i style="color: gray;" class="material-icons"> share </i>
+              <h4>Share</h4>
+            </div>
+            <div class="inputOption">
+              <i style="color: gray;" class="material-icons"> send </i>
+              <h4>Send</h4>
+            </div>
+          </div>
+        </div>
+        <!-- Post Ends -->
+
+        <!-- Post Starts -->
+        <div class="post">
+          <div class="post__header">
+            <i class="material-icons sidebar__topAvatar"> account_circle </i>
+            <div class="post__info">
+              <h2>Guntur mohana sri</h2>
+              <p>Job descriptions</p>
+            </div>
+          </div>
+
+          <div class="post__body"></div>
+          <p>
+            Hello, Connections 😁 I have successfully completed my second task
+            from Oasis Internship. My project is Console based ATM Interface
+            application.
+          </p>
+          <a
+            href="https://azure.microsoft.com/en-in/pricing/purchase-options/pay-as-you-go/search/?OCID=AIDcmmeu5quw85_PSOC_29686911_363023791_189118412&dclid=CI2Ioprhl_8CFX7XcwEdgKAOnA"
+            target="_balnk"
+          >
+            <img
+              class="image-1"
+              src="https://paradisecomputing.co.uk/media/4s2mvam4/micosoft-azure.png"
+              alt=""
+            />
+          </a>
+          <div class="feed__inputOptions">
+            <div class="inputOption">
+              <i style="color: gray;" class="material-icons"> thumb_up </i>
+              <h4>Like</h4>
+            </div>
+            <div class="inputOption">
+              <i style="color: gray;" class="material-icons"> comment </i>
+              <h4>Comment</h4>
+            </div>
+            <div class="inputOption">
+              <i style="color: gray;" class="material-icons"> share </i>
+              <h4>Share</h4>
+            </div>
+            <div class="inputOption">
+              <i style="color: gray;" class="material-icons"> send </i>
+              <h4>Send</h4>
+            </div>
+          </div>
+        </div>
+        <!-- Post Ends -->
+
+        <!-- Post Starts -->
+        <div class="post">
+          <div class="post__header">
+            <i class="material-icons sidebar__topAvatar"> account_circle </i>
+            <div class="post__info">
+              <h2>Malli deekshitha</h2>
+              <p>Job Description</p>
+            </div>
+          </div>
+
+          <div class="post__body">
+            <p>Here is my Certificates</p>
+            <img
+              class="image-1"
+              src="https://www.shutterstock.com/image-vector/blue-golden-certificate-award-design-260nw-1900319254.jpg"
+              alt=""
+            />
+          </div>
+
+          <div class="feed__inputOptions">
+            <div class="inputOption">
+              <i style="color: gray;" class="material-icons"> thumb_up </i>
+              <h4>Like</h4>
+            </div>
+            <div class="inputOption">
+              <i style="color: gray;" class="material-icons"> comment </i>
+              <h4>Comment</h4>
+            </div>
+            <div class="inputOption">
+              <i style="color: gray;" class="material-icons"> share </i>
+              <h4>Share</h4>
+            </div>
+            <div class="inputOption">
+              <i style="color: gray;" class="material-icons"> send </i>
+              <h4>Send</h4>
+            </div>
+          </div>
+        </div>
+        <!-- Post Ends -->
+
+        <!-- Post Starts -->
+        <div class="post">
+          <div class="post__header">
+            <i class="material-icons sidebar__topAvatar"> account_circle </i>
+            <div class="post__info">
+              <h2>saiva sri</h2>
+              <p>Job Description</p>
+            </div>
+          </div>
+
+          <div class="post__body">
+            <p>Finally i made it wow</p>
+            <img
+              class="image-1"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7QmeoBX-2R2q2xjsyg1b5QAAawmGht_vc1w&usqp=CAU"
+              alt=""
+            />
+          </div>
+
+          <div class="feed__inputOptions">
+            <div class="inputOption">
+              <i style="color: gray;" class="material-icons"> thumb_up </i>
+              <h4>Like</h4>
+            </div>
+            <div class="inputOption">
+              <i style="color: gray;" class="material-icons"> comment </i>
+              <h4>Comment</h4>
+            </div>
+            <div class="inputOption">
+              <i style="color: gray;" class="material-icons"> share </i>
+              <h4>Share</h4>
+            </div>
+            <div class="inputOption">
+              <i style="color: gray;" class="material-icons"> send </i>
+              <h4>Send</h4>
+            </div>
+          </div>
+        </div>
+        <!-- Post Ends -->
+      </div>
+      <!-- Feed Ends -->
+
+      <!-- Widgets Starts -->
+      <div class="widgets">
+        <div class="widgets__header">
+          <h2>LinkedIn News</h2>
+          <i class="material-icons"> info </i>
+        </div>
+        <div class="widgets__article">
+          <div class="widgets__articleLeft">
+            <i class="material-icons"> fiber_manual_record </i>
+          </div>
+          <div class="widgets__articleRight">
+            <h4>State Street to Hire 50,000</h4>
+            <p>3day ago . 38,923 readers</p>
+          </div>
+        </div>
+
+        <div class="widgets__article">
+          <div class="widgets__articleLeft">
+            <i class="material-icons"> fiber_manual_record </i>
+          </div>
+          <div class="widgets__articleRight">
+            <h4>What Zen wants from an employe</h4>
+            <p>2days ago . 5,633 readers</p>
+          </div>
+        </div>
+
+        <div class="widgets__article">
+          <div class="widgets__articleLeft">
+            <i class="material-icons"> fiber_manual_record </i>
+          </div>
+          <div class="widgets__articleRight">
+            <h4>Fresh VC funds from start up</h4>
+            <p>2days ago . 13,255 readers</p>
+          </div>
+        </div>
+        <script src="index.js"></script>
+
+        <div class="widgets__article">
+          <div class="widgets__articleLeft">
+            <i class="material-icons"> fiber_manual_record </i>
+          </div>
+          <div class="widgets__articleRight">
+            <h4>Fresh VC funds from start up</h4>
+            <p>2days ago . 13,255 readers</p>
+          </div>
+        </div>
+        <div class="widgets__article">
+          <div class="widgets__articleLeft">
+            <i class="material-icons"> fiber_manual_record </i>
+          </div>
+          <div class="widgets__articleRight">
+            <h4>State Street to Hire 50,000</h4>
+            <p>3day ago . 38,923 readers</p>
+          </div>
+        </div>
+        <span id="dots">...</span>
+        <span id="more">
+          <div class="widgets__article">
+            <div class="widgets__articleLeft">
+              <i class="material-icons"> fiber_manual_record </i>
+            </div>
+            <div class="widgets__articleRight">
+              <h4>State Street to Hire 50,000</h4>
+              <p>3day ago . 38,923 readers</p>
+            </div>
+          </div>
+
+          <div class="widgets__article">
+            <div class="widgets__articleLeft">
+              <i class="material-icons"> fiber_manual_record </i>
+            </div>
+            <div class="widgets__articleRight">
+              <h4>State Street to Hire 50,000</h4>
+              <p>3day ago . 38,923 readers</p>
+            </div>
+          </div>
+          <div class="widgets__article">
+            <div class="widgets__articleLeft">
+              <i class="material-icons"> fiber_manual_record </i>
+            </div>
+            <div class="widgets__articleRight">
+              <h4>State Street to Hire 50,000</h4>
+              <p>3day ago . 38,923 readers</p>
+            </div>
+          </div>
+          <div class="widgets__article">
+            <div class="widgets__articleLeft">
+              <i class="material-icons"> fiber_manual_record </i>
+            </div>
+            <div class="widgets__articleRight">
+              <h4>State Street to Hire 50,000</h4>
+              <p>3day ago . 38,923 readers</p>
+            </div>
+          </div>
+          <div class="widgets__article">
+            <div class="widgets__articleLeft">
+              <i class="material-icons"> fiber_manual_record </i>
+            </div>
+            <div class="widgets__articleRight">
+              <h4>State Street to Hire 50,000</h4>
+              <p>3day ago . 38,923 readers</p>
+            </div>
+          </div>
+          <div class="widgets__article">
+            <div class="widgets__articleLeft">
+              <i class="material-icons"> fiber_manual_record </i>
+            </div>
+            <div class="widgets__articleRight">
+              <h4>State Street to Hire 50,000</h4>
+              <p>3day ago . 38,923 readers</p>
+            </div>
+          </div>
+        </span>
+        <button onclick="myFunction()" id="myBtn">Show More</button>
+      </div>
+
+      <!-- Widgets Ends -->
+    </div>
+    <!-- Main Body Ends -->
+  </body>
+</html>
